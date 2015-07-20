@@ -138,6 +138,7 @@
 }
 .nolink{
   text-decoration: none;
+  color:white;
 }
 .title{
   color:#9BADA8;
@@ -169,7 +170,7 @@
   box-shadow: 0 8px 6px -6px #232827;
 }
 a:visited{
-  color:#9BADA8;
+  color: white;
 }
 footer{
   text-align: center;
