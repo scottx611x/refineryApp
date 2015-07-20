@@ -1,6 +1,6 @@
 # refineryApp
 ###A Flask-driven Web App by Scott Ouellette
-####Tested within Ubuntu 14.10
+####Tested within Ubuntu 14.10 & OSX 10.10.3
 
 ##Minimum Requirements
 ####Python 2.7.8
