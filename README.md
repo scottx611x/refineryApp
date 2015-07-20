@@ -20,7 +20,7 @@
 ####While in the root directory execute: "python run.py"
 ####This will startup a server instance
 
-####The web app will be locally accessible from your browser at: 127.0.0.1:5000/refineryApp
+####The web app will be locally accessible from your browser at: (127.0.0.1:5000/refineryApp)
 
 ####Click on Categories and Workflows to bring up a web form for editing!
 
