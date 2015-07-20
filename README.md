@@ -23,6 +23,7 @@
 ####The web app will be locally accessible from your browser at: http://127.0.0.1:5000/refineryApp
 
 ####Click on Categories and Workflows to bring up a web form for editing!
+####Ctrl + Click on workflows while editing to choose multiple ones to reassign to a Category!
 
 ##Valid URL examples:
 ###View all existing workflows
