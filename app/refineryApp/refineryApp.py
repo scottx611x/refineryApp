@@ -11,23 +11,20 @@ from .models import Category, Workflow
 #Blueprint allows for all viewsto be prefixed with "/refineryApp/"
 refineryApp = Blueprint('refineryApp', __name__, template_folder='templates')
 
-
 class ViewHelper(MethodView):
     Categories_template = 'refineryApp/Categories.html'
     Workflows_template = 'refineryApp/Workflows.html'
     refineryApp_template = 'refineryApp/refineryApp.html'
     edit_template = 'refineryApp/Edit.html'
-
+    
+    #init lets us generate a url based on the given endpoint ie workflows -> refineryApp/workflows
     def __init__(self, model, endpoint, Categories_template=None, Workflows_template = None,refineryApp_template=None,
                  edit_template=None, exclude=None, filters=None):
         self.model = model
         self.endpoint = endpoint
-        # so we can generate a url relevant to this
-        # endpoint, for example if we utilize this CRUD object
-        # to enpoint workflows the path generated will be
-        # /refineryApp/workflows/
         self.path = url_for('.%s' % self.endpoint)
-
+        
+        #templates based on URL
         if self.endpoint == "/refineryApp/category/":
             self.Categories_template = Categories_template
         if self.endpoint == "/refineryApp/workflows/":
@@ -36,9 +33,11 @@ class ViewHelper(MethodView):
             self.refineryApp_template = refineryApp_template
         if edit_template:
             self.edit_template = edit_template
+            
         self.filters = filters or {}
+        #Form will dynamically handle any db object
         self.ObjForm = model_form(self.model, db.session, exclude=exclude)
-
+    
     def render_edit(self, **kwargs):
         return render_template(self.edit_template, path=self.path, **kwargs)
 
@@ -65,19 +64,21 @@ class ViewHelper(MethodView):
             return redirect(self.path)
 
         if obj_id:
-            # this creates the form fields base on the model
-            # so we don't have to do them one by one
+            #Dynamically create form fields based on db Model
             ObjForm = model_form(self.model, db.session)
 
             obj = self.model.query.get(obj_id)
-            # populate the form with our category data
+            
+            #populate form
             form = self.ObjForm(obj=obj)
-            # action is the url that we will later use
-            # to do post, the same url with obj_id in this case
+            
+            # action is the url that we will later use to POST data
             action = request.path
             return self.render_edit(form=form, action=action)
-        print self.path
+    
         obj = self.model.query.order_by(self.model.date_Created.desc()).all()
+        
+        #choosing which template to display
         if self.path == "/refineryApp/":
             return self.render_refineryApp(obj=obj)
         elif "Category" in str(obj):
@@ -85,22 +86,20 @@ class ViewHelper(MethodView):
         elif "Workflow" in str(obj):
             return self.render_Workflows(obj=obj)
         
-
+    
     def post(self, obj_id=''):
-        # either load and object to update if obj_id is given
-        # else initiate a new object, this will be helpfull
-        # when we want to create a new object instead of just
-        # editing existing one
+        #update db object if id exists otherwise create new db object
         if obj_id:
             obj = self.model.query.get(obj_id)
         else:
             obj = self.model()
 
         ObjForm = model_form(self.model, db.session)
+        
         # populate the form with the request data
         form = self.ObjForm(request.form)
-        # this actually populates the obj (the category post)
-        # from the form, that we have populated from the request post
+        
+        # populate the Category or workflow being edited
         form.populate_obj(obj)
 
         db.session.add(obj)
@@ -116,6 +115,7 @@ def register_ViewHelper(app, url, endpoint, model, decorators=[], **kwargs):
     for decorator in decorators:
         view = decorator(view)
 
+    #adding url rules
     app.add_url_rule('%s/' % url, view_func=view, methods=['GET', 'POST'])
     app.add_url_rule('%s/<int:obj_id>/' % url, view_func=view)
     app.add_url_rule('%s/<operation>/' % url, view_func=view, methods=['GET'])
