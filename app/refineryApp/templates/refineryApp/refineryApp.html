@@ -35,7 +35,7 @@ project/app/refineryApp/templates/refineryApp/refineryApp.html
               
                 <ul class="button green">
                   <li class = "firstCat">
-                  <span>Category: {{category.category_Name}}</span>
+                  <span>Category: {{category.name}}</span>
                 </li>
                   {% set firstHalf, secondHalf = category.category_Description|string|splitCatDesc() %}
                   <li>
@@ -50,7 +50,7 @@ project/app/refineryApp/templates/refineryApp/refineryApp.html
                     <li class="button lightgreen" >
                       <ul>
                         <li class = "firstWf">
-                        Workflow: {{workflow.workflow_Name}}
+                        Workflow: {{workflow.name}}
                        
                         {% if workflow.workflow_Steps|string == "1" %}
                           [{{workflow.workflow_Steps}} Step]
