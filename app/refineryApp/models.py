@@ -45,6 +45,7 @@ class Workflow(db.Model):
 		self.workflow_Steps = workflow_Steps
 
 	def __repr__(self):
+		#account for the pluralization of the word "Step"
 		if (self.workflow_Steps > 1):
 			return 'Workflow: {} [{} Steps] \n\n {}'.format(self.name, self.workflow_Steps, self.workflow_Description)
 		else:
