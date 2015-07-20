@@ -1,6 +1,6 @@
 # refineryApp
-##Flask-driven Web App
-*Tested within Ubuntu 14.10*
+###Flask-driven Web App
+####Tested within Ubuntu 14.10*
 
 #Requirements
 *Python 2.7.8*
