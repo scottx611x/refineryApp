@@ -1,0 +1,71 @@
+<!--
+Scott Ouellette
+refineryApp
+project/app/refineryApp/templates/refineryApp/Categories.html 
+-->
+
+<!DOCTYPE html>
+
+<head>
+    <title>RefineryApp-Categories</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+</head>
+
+<style type=text/css>{{ get_resource_as_string("static/styles.css") }}</style>
+
+<html>
+<body>
+  <div class = "titleWrapper">
+    <br>
+  <h1 class="title fadeIn">RefineryApp - Categories</h1>
+  <div class = "title_Sub fadeIn">
+  <a class = "nolink" href="/refineryApp">Home</a>&nbsp;&nbsp;
+  <a class = "nolink" href="/refineryApp/categories/"> View All Categories</a>&nbsp;&nbsp;
+  <a class = "nolink" href="/refineryApp/workflows/"> View All Workflows</a>
+</div>
+<br>
+</div>
+    <div class="list">
+      <br>
+      {% for category in obj %}
+        <div class="dataContainer">
+            <div class="inner">
+              <a class ="link" href="{{path + category.id|string}}">
+              
+                <ul class="button green">
+                  <li class = "firstCat">
+                  <span>Category: {{category.name}}</span>
+                </li>
+                  {% set firstHalf, secondHalf = category.category_Description|string|splitCatDesc() %}
+                  <li>
+                      {{firstHalf}}
+                      <br>
+                      {{secondHalf}}
+                  </li>
+                      </ul>
+            <br>
+            <a class="delete link button red" href="{{path +'delete/'+ category.id|string}}">Delete {{category.name}}
+            </a>
+            <br>
+            </ul></a>
+          </div>
+        </div>
+        <br>
+    {% endfor %}
+
+    <div class="createButtonsWrapper">
+      <div class = "createButtons">
+    <a class="link button blue" href="{{path + 'new'}}">Create new Category</a>
+    <a class="link button blue" href="/refineryApp/workflows/{{'new'}}">Create new Workflow</a>
+  </div><br>
+  </div>
+    </div>
+
+</body>
+<br>
+<footer>
+  RefineryApp <a href="http://www.scott-ouellette.com">Scott Ouellette</a> &copy;<script>new Date().getFullYear()>2010&&document.write(new Date().getFullYear());</script>
+</footer>
+<br><br>
+</html>
+
