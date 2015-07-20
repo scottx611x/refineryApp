@@ -21,7 +21,7 @@ class Category(db.Model):
 		self.category_Description = category_Description
 
 	def __repr__(self):
-		return '<Category - {}>'.format(self.name)
+		return 'Category: {}'.format(self.name)
 
 # DB Model for a Workflow -> Unique name, Description, # of Steps, creation date, last modified date
 class Workflow(db.Model):
