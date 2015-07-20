@@ -28,11 +28,11 @@
 ###View all existing workflows
 ####http://127.0.0.1:5000/refineryApp/workflows/
 ###Edit the Category where id == 1
-####http://127.0.0.1:5000/refineryApp/categories/1 
+####http://127.0.0.1:5000/refineryApp/categories/1/ 
 ###Create a new Workflow
-####http://127.0.0.1:5000/refineryApp/workflows/new 
+####http://127.0.0.1:5000/refineryApp/workflows/new/
 ###Delete the Category where id == 2
-####http://127.0.0.1:5000/refineryApp/categories/delete/2 
+####http://127.0.0.1:5000/refineryApp/categories/delete/2/ 
 
 
 
