@@ -2,13 +2,13 @@
 ###A Flask-driven Web App by Scott Ouellette
 ####Tested within Ubuntu 14.10*
 
-#Requirements
+##Minimum Requirements
 ####Python 2.7.8
 ####pip 1.5.6
 ####git 2.1.0
 ####python virtualenv module 13.1.0
 
-#Install instructions
+##Install instructions
 ####pip install virtualenv
 ####git clone git@github.com:scottx611x/refineryApp.git
 ####cd refineryApp
@@ -16,7 +16,7 @@
 ####. venv/bin/activate
 ####pip install -r requirements.txt
 
-#Running the App
+##Running the App
 ####While in the root directory execute: "python run.py"
 ####This will startup a server instance
 
