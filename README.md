@@ -3,9 +3,9 @@
 ####Tested within Ubuntu 14.10 & OSX 10.10.3
 
 ##Minimum Requirements:
-####Python 2.7.8
-####pip 1.5.6
-####git 2.1.0
+####Python 2.7
+####pip
+####git
 ####python virtualenv module 13.1.0
 
 ##Install instructions:
