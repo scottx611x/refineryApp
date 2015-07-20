@@ -25,9 +25,12 @@
 ####Click on Categories and Workflows to bring up a web form for editing!
 
 ##Valid URL examples:
-####/refineryApp/categories/1 edit the Category where id == 1
-####/refineryApp/workflows/new create a new Workflow
-####/refineryApp/categories/delete/2 delete the Category where id == 2
+###Edit the Category where id == 1
+####http://127.0.0.1:5000/refineryApp/categories/1 
+###Create a new Workflow
+####http://127.0.0.1:5000/refineryApp/workflows/new 
+###Delete the Category where id == 2
+####http://127.0.0.1:5000/refineryApp/categories/delete/2 
 
 
 
