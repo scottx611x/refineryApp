@@ -4,7 +4,7 @@
 
 #Requirements
 ####Python 2.7.8
-####pip - https://pip.pypa.io/en/stable/installing.html
+####pip 1.5.6
 ####git 2.1.0
 
 #Install instructions
