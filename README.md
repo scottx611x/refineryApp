@@ -25,6 +25,8 @@
 ####Click on Categories and Workflows to bring up a web form for editing!
 
 ##Valid URL examples:
+###View all existing workflows
+####http://127.0.0.1:5000/refineryApp/workflows 
 ###Edit the Category where id == 1
 ####http://127.0.0.1:5000/refineryApp/categories/1 
 ###Create a new Workflow
