@@ -10,7 +10,7 @@
 
 ##Install instructions:
 ####pip install virtualenv
-####git clone git@github.com:scottx611x/refineryApp.git
+####git clone https://github.com/scottx611x/refineryApp.git
 ####cd refineryApp
 ####virtualenv venv
 ####. venv/bin/activate
