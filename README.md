@@ -9,15 +9,15 @@
 ####python virtualenv module 13.1.0
 
 ##Install instructions:
-####pip install virtualenv
-####git clone https://github.com/scottx611x/refineryApp.git
-####cd refineryApp
-####virtualenv venv
-####. venv/bin/activate
-####pip install -r requirements.txt
+####`pip install virtualenv`
+####`git clone https://github.com/scottx611x/refineryApp.git`
+####`cd refineryApp`
+####`virtualenv venv`
+####`. venv/bin/activate`
+####`pip install -r requirements.txt`
 
 ##Running the App:
-####While in the root directory execute: "python run.py"
+####While in the root directory execute: 'python run.py'
 ####This will startup a server instance
 
 ####The web app will be locally accessible from your browser at: http://127.0.0.1:5000/refineryApp
